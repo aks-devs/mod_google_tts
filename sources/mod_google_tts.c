@@ -15,14 +15,12 @@
  * License.
  *
  * Module Contributor(s):
- *  Konstantin Alexandrin <akscfx@gmail.com>
+ *  aks https://akstel.org
  *
  *
- * Google Text-To-Speech service for the Freeswitch
+ * Google Text-to-Speech service for the Freeswitch
  * https://cloud.google.com/text-to-speech/docs/reference/rest
  *
- * Development repository:
- * https://github.com/akscf/mod_google_tts
  *
  */
 #include "mod_google_tts.h"
@@ -489,7 +487,9 @@ SWITCH_MODULE_LOAD_FUNCTION(mod_google_tts_load) {
     speech_interface->speech_numeric_param_tts = speech_numeric_param_tts;
     speech_interface->speech_float_param_tts = speech_float_param_tts;
 
-    switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE, "GoogleTTS (%s)\n", MOD_VERSION);
+    switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE, "Google Text-to-Speech (%s)\n", MOD_VERSION);
+    switch_log_printf(SWITCH_CHANNEL_LOG, SWITCH_LOG_NOTICE, "(C)2025 akstel.org\n");
+
 out:
     if(xml) {
         switch_xml_free(xml);
